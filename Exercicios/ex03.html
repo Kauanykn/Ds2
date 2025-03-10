@@ -1,0 +1,12 @@
+<script>
+    let tarefa = [];
+    let continuar = 'sim';
+    while (continuar === 'sim') {
+        tarefa.push(prompt('Digite 5 tarefas: '))
+        continuar = prompt('Deseja adicionar mais tarefas? sim/nao');
+        
+    }
+    tarefa.forEach(function(taref){
+        console.log(taref)
+    })
+</script>

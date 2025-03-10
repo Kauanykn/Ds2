@@ -1,0 +1,16 @@
+<script>
+   let numeros = [];
+   let continuar = "sim"
+   
+   while (continuar == 'sim') {
+        numeros.push(prompt('Digite 10 numeros: '))
+        continuar = prompt('Deseja adicionar mais numeros? sim/nao');    
+    }
+
+   numeros.sort(
+    function(a, b){
+        return a -b 
+    }
+   );
+   console.log(numeros);
+</script>
