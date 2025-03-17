@@ -1,0 +1,18 @@
+<script>
+    
+let nomejogador = [];
+let saldogols = [];
+let continuar = 'sim';
+
+while (continuar == 'sim') {
+    nomejogador.push(prompt('Digite o nome do jogador: '));
+    saldogols.push(prompt('Digite o tanto de gols: '));
+    continuar = prompt('Deseja adicionar mais um jogador na lista?');
+}
+
+nomejogador.forEach(
+    function(item, item2) {
+        console.log(`${item} (${saldogols[item2]}) gols`);
+    } );
+
+</script>

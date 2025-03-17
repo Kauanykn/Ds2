@@ -1,0 +1,14 @@
+<script>
+    lista = [];
+    continuar = 'sim';
+
+    while (continuar === 'sim') {
+        lista.push(prompt('Digite o nome do produto que irá comprar: '))
+        continuar = prompt('Deseja adicionar algo a mais? sim/nao');
+        
+    }
+
+    lista.forEach(function(list){
+        console.log(list)
+    })
+</script>
