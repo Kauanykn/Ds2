@@ -1,0 +1,59 @@
+<script>
+    let operacao;
+    let valor1;
+    let valor2;
+    let resultado;
+
+
+    function setValor1(){
+        valor1 = Number(prompt('Digite o primeiro valor: '));
+    }
+    function setValor2(){
+        valor2 = Number(prompt('Digite o segundo valor: '));
+    }
+
+    function setOperacao(){
+        operacao = prompt('Digite a operação desejada + - / *');
+    }
+    function calculate (){
+        if (operacao == '+')
+        somar();
+
+        if (operacao == '-')
+        subtrair();
+
+        if (operacao == '/')
+       dividir();
+
+        if (operacao == '*')
+        multiplicar();
+       
+    }
+
+    function somar(){
+        resultado = valor1 + valor2;
+    }
+
+    function subtrair(){
+        resultado = valor1 - valor2;
+    }
+
+    function dividir(){ 
+        resultado = valor1 / valor2;
+    }
+
+    function multiplicar(){ 
+        resultado = valor1 * valor2;
+    }
+
+    function showResult(){
+        alert(`${valor1} ${operacao} ${valor2} = ${resultado}`);
+    }
+
+    setValor1();
+    setValor2();
+    setOperacao();
+    calculate();
+    showResult();
+
+</script>
