@@ -1,0 +1,65 @@
+<script>
+    let pote = [];
+
+    addIngrediente('1 Xícara de Farinha');
+    addIngrediente('ovo');
+    addIngrediente('ovo');
+    addIngrediente('ovo');
+    addIngrediente('Farinha');
+    addIngrediente('1 Colher de óleo');
+    addIngrediente('1 Colher de leite');
+    addIngrediente('1 colher de chá de fermento');
+    addIngrediente('Chocolate a gosto');
+
+    misturarIngredientes();
+
+    addAssadeira();
+
+    addForno();
+
+    aguardarQuaseumahora();
+
+    retiraBolo();
+
+    esperarEsfriar();
+
+    degustar();
+
+    function addIngrediente(ingrediente){
+        pote.push(ingrediente);
+        console.log('Adicionar: ' + ingrediente);
+    };
+
+
+    function misturarIngredientes(){
+        console.log('Os ingredientes foram misturados com sucesso!');
+    };
+
+    function addAssadeira(){
+        console.log('Ingredientes adicionados na assadeira com sucesso!');
+    };
+
+    function addForno(){
+        console.log('Assadeira levada ao forno com sucesso!');
+    };
+
+    function aguardarQuaseumahora(){
+        console.log('A massa está assando!!');
+    };
+
+    function retiraBolo(){
+        console.log('Bolo retirado do forno com sucesso!!');
+    };
+
+    function esperarEsfriar(){
+        console.log('Aguardando esfriar...')
+    };
+    
+    function degustar(){
+        console.log('Ainn que delicia ')
+        console.log(pote);
+    };
+
+
+
+</script>
