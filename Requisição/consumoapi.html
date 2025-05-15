@@ -40,7 +40,7 @@
                 let title = document.createElement('h2');
                 title.innerText = country.name.common; 
 
-                let subtitle = document.createElement('h6');
+                let subtitle = document.createElement('h4');
                 subtitle.innerText = country.name.official
 
                 let capital = document.createElement('strong');
@@ -73,12 +73,22 @@
                     independent.innerText = "País não independente"
                 }
 
+                let fifa = document.createElement('p')
+                fifa.innerText = country.fifa;
+
+                let status = document.createElement('h5')
+                status.innerText = country.status;
+
+                let languages = document.createElement('h5')
+                languages.innerText = Object.keys(country.languages);
+
+
                 let timezone = document.createElement('h6');
                 timezone.innerText = country.timezones;
 
                 let coatOfArms = document.createElement('img');
                 coatOfArms.setAttribute('src', country.coatOfArms.svg);
-                coatOfArms.style.width = '100%';
+                coatOfArms.style.width = '55%';
 
 
                 let col = document.createElement('div');
@@ -88,13 +98,16 @@
                 col.appendChild(title);
                 col.appendChild(subtitle);
                 col.appendChild(capital);
+                col.appendChild(languages);
+                col.appendChild(status);
                 col.appendChild(continents);
                 col.appendChild(region);
                 col.appendChild(subregion);
                 col.appendChild(population);
-                col.appendChild(border);
                 col.appendChild(independent);
+                col.appendChild(fifa);
                 col.appendChild(timezone);
+                col.appendChild(border);
                 col.appendChild(coatOfArms);
                 col.appendChild(maps);
                 countries_list.appendChild(col);
