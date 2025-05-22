@@ -90,9 +90,19 @@
                 coatOfArms.setAttribute('src', country.coatOfArms.svg);
                 coatOfArms.style.width = '55%';
 
+                let iframe = document.createElement('iframe');
+                iframe.setAttribute('src', country.iframe.latIng);
+                iframe.setAttribute.width = '600';
+                iframe.setAttribute.height = '450';
+                iframe.setAttribute.style = "border:0;";
+                iframe.setAttribute.allowfullscreen = "";
+                iframe.setAttribute.loading = "lazy";
+                iframe.setAttribute.referrerpolicy= "no-referrer-when-downgrade";
+
 
                 let col = document.createElement('div');
                 col.classList.add("col-3");
+                
 
                 col.appendChild(img);
                 col.appendChild(title);
@@ -110,6 +120,7 @@
                 col.appendChild(border);
                 col.appendChild(coatOfArms);
                 col.appendChild(maps);
+                col.appendChild(iframe);
                 countries_list.appendChild(col);
 
             });

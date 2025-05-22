@@ -21,13 +21,13 @@
                 modelo: 'Uno',
                 ano: 1997,
                 combustivel: 'flex',
-                cor: 'Laranja',
+                cor: 'Preto',
                 cilindradas: '200cc',
                 quilometragem: '200 mil',
                 valor_a_vista: 20.000,
                 marca: 'Fiat',
                 fotos: [
-                    'https://i.pinimg.com/736x/bd/77/5a/bd775ae5ef7e1d6fe0ff9ec43f611a5f.jpg',
+                    'https://i.pinimg.com/736x/8c/72/a1/8c72a18cd1cf6c3acc6d5678118be680.jpg'
                 ]
 
             },
@@ -55,7 +55,7 @@
                 valor_a_vista: 18.000,
                 marca: ' Chevrolet',
                 fotos: [
-                    'https://i.pinimg.com/736x/0c/18/78/0c1878c3351009ce8fd8e66dad709a7f.jpg',
+                    'https://i.pinimg.com/736x/3b/d7/bb/3bd7bb3a7494f7eafa4585851ce50f53.jpg',
                 ]
 
             }
@@ -65,6 +65,7 @@
         veiculos.forEach(veiculo =>{
             let modelo = document.createElement('h1');
             modelo.style.fontSize = '36px';
+            modelo.style.textAlign = "center"
             modelo.style.color= 'black';
             modelo.style.textTransform = 'uppercase';
             modelo.innerText = veiculo.modelo;
@@ -79,6 +80,11 @@
             combustivel.style.fontSize = '20px';
             combustivel.style.color= 'black';
             combustivel.innerText = veiculo.combustivel;
+
+            let cor = document.createElement('h3');
+            cor.style.fontSize = '20px'
+            cor.style.color= 'black';
+            cor.innerText = veiculo.cor;
             
 
 
@@ -99,6 +105,7 @@
         
             card.appendChild(ano);
             card.appendChild(combustivel);
+            card.appendChild(cor);
             col.appendChild(card);
             box.appendChild(col);
         })
