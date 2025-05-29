@@ -1,13 +1,13 @@
 body{
-    background-color:  #e9e9e9;
+    background-color:  #364A73;
 }
-div{
-   background-color: #7929d4;
+.container-fluid{
+   background-color: #140F8C;
    color: aliceblue;
    height: 45%;
 }
 .btn{
-    background-color: #739FFE;
+    background-color: #1D17BF;
     color: aliceblue;
 }
 .navbar-brand{
