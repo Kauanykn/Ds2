@@ -3,9 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Imagem Astronômica do Dia.</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Foto Astronômica do Dia </title>
 </head>
 <body>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <li class="nav-item"><a class="nav-link" href="Planetarium.html">Início</a></li>
+        </li>
+        <li class="nav-item">
+        <li class="nav-item"><a class="nav-link" href="MRP.html">Foto de Marte</a></li>
+        </li>
+        <li class="nav-item">
+            <li class="nav-item"><a class="nav-link" href="OPDT.html">Objetos Próximos a Terra</a></li>
+        </li>
+        <li class="nav-item">
+            <li class="nav-item"><a class="nav-link" href="EPIC.html">EPIC</a></li>
+        </li>
+      </ul>
+    <style>
+        h1{
+            font-size: xx-large;
+            font-family: Arial, Helvetica, sans-serif;
+            justify-content: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #000000;
+            text-align: center;
+        }
+        #nasa-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 100%;
+            overflow: hidden; 
+            margin: 0 auto;
+        }
+        #nasa-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+        }
+        #nasa-video {
+            width: 100%;
+            min-height: 450px;
+        }
+        .date {
+            color: #666;
+            font-style: italic;
+        }
+        .loading {
+            text-align: center;
+            font-style: italic;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+
+    <h1>Foto Astronômica do Dia</h1>
     
+    <div id="nasa-container">
+        <div id="loading" class="loading">Carregando...</div>
+        <div id="content" style="display: none;">
+            <h2 id="title"></h2>
+            <div class="date" id="date"></div>
+            <div id="media"></div>
+            <p id="explanation"></p>
+        </div>
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+
+    <script>
+        function fetchAPOD(){
+            let container = document.querySelector('#nasa-container');
+            fetch('https://api.nasa.gov/planetary/apod?api_key=LPbEcrvFwqqY6UupAXvkkUV88z22UFDIrE24mvOD')
+            .then(resp => resp.json())
+            .then(data => {
+                let title = document.createElement('h2');
+                title.innerText = data.title;
+
+                let description = document.createElement('p');
+                description.innerText = data.explanation;
+
+                if(data.media_type === 'image'){
+                    let image = document.createElement('img');
+                    image.setAttribute('src', data.url);
+                    image.setAttribute('id', 'nasa-image'); 
+                    container.appendChild(image);
+                } else if(data.media_type === 'video'){
+                    let video = document.createElement('iframe');
+                    video.setAttribute('src', data.url);
+                    video.setAttribute('frameborder', 0);
+                    video.setAttribute('allowfullscreen', '');
+                    video.setAttribute('id', 'nasa-video'); 
+                    container.appendChild(video);
+                }
+
+                let content = document.getElementById('content');
+                content.style.display = 'block'; 
+                document.getElementById('loading').style.display = 'none'; 
+                container.appendChild(title);
+                container.appendChild(description);
+            })
+
+            .catch(error => {
+                console.error('Erro ao buscar dados da Nasa: ', error);
+                container.innerHTML += '<p>Não foi possível carregar a imagem do dia. Tente novamente mais tarde.</p>';
+            });
+        }
+
+        fetchAPOD();
+
+
+        
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
