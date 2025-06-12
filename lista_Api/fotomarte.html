@@ -16,10 +16,10 @@
         <li class="nav-item"><a class="nav-link" href="imagemdia.html">Foto Astronômica do Dia</a></li>
         </li>
         <li class="nav-item">
-            <li class="nav-item"><a class="nav-link" href="OPDT.html">Objetos Próximos a Terra</a></li>
+            <li class="nav-item"><a class="nav-link" href="objetoterra.html">Objetos Próximos a Terra</a></li>
         </li>
         <li class="nav-item">
-            <li class="nav-item"><a class="nav-link" href="EPIC.html">EPIC</a></li>
+            <li class="nav-item"><a class="nav-link" href="imagemdia.html">Imagens ds terra</a></li>
         </li>
       </ul>
     <style>
@@ -36,7 +36,7 @@
             line-height: 1.6;
         }
         h1 {
-            color: #0b3d91;
+            color: #000000;
             text-align: center;
         }
         #mars-container {
@@ -82,7 +82,7 @@
     <script>
         function fetchMarsPhotos(){
             let container = document.querySelector('#mars-container');
-            fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=LPbEcrvFwqqY6UupAXvkkUV88z22UFDIrE24mvOD')
+            fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=ZOdBcsiKYAOa0Eb0wCBgKEejcj4bVmh34IoD46zg')
             .then(resp => resp.json())
             .then(data => {
                 if(data.photos && data.photos.length > 0) {

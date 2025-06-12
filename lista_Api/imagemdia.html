@@ -13,13 +13,13 @@
             <li class="nav-item"><a class="nav-link" href="Planetarium.html">Início</a></li>
         </li>
         <li class="nav-item">
-        <li class="nav-item"><a class="nav-link" href="MRP.html">Foto de Marte</a></li>
+        <li class="nav-item"><a class="nav-link" href="fotomarte.html">Foto de Marte</a></li>
         </li>
         <li class="nav-item">
-            <li class="nav-item"><a class="nav-link" href="OPDT.html">Objetos Próximos a Terra</a></li>
+            <li class="nav-item"><a class="nav-link" href="objetoterra.html">Objetos Próximos a Terra</a></li>
         </li>
         <li class="nav-item">
-            <li class="nav-item"><a class="nav-link" href="EPIC.html">EPIC</a></li>
+            <li class="nav-item"><a class="nav-link" href="imagensterra.html">Imagens da terra</a></li>
         </li>
       </ul>
     <style>
@@ -88,7 +88,7 @@
     <script>
         function fetchAPOD(){
             let container = document.querySelector('#nasa-container');
-            fetch('https://api.nasa.gov/planetary/apod?api_key=LPbEcrvFwqqY6UupAXvkkUV88z22UFDIrE24mvOD')
+            fetch('https://api.nasa.gov/planetary/apod?api_key=ZOdBcsiKYAOa0Eb0wCBgKEejcj4bVmh34IoD46zg')
             .then(resp => resp.json())
             .then(data => {
                 let title = document.createElement('h2');
